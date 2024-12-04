@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st 
-
+import geopandas as gpd
 
 def top_locations(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame:
     amount_by_location_df = violations_df.pivot_table(index='location', values='amount', aggfunc='sum').sort_values(by='amount', ascending=False)

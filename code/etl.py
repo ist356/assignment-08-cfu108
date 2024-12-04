@@ -1,15 +1,6 @@
 import pandas as pd
 import streamlit as st 
 
- '''
-    Return a dataframe of the locations of parking tickets with $1,000 or more in total 
-    aggregate violation amounts.  
-    This dataframe is keyed on location (1 row per location) 
-    and has two columns: location and amount.  
-    There should be 135 rows in this dataframe.    
-    '''
-
-
 def top_locations(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame:
     amount_by_location_df = violations_df.pivot_table(index='location', values='amount', aggfunc='sum').sort_values(by='amount', ascending=False)
     amount_by_location_df['location'] = amount_by_location_df.index
