@@ -40,3 +40,6 @@ if __name__ == '__main__':
     tickets_in_top_locations_df = tickets_in_top_locations(violations_df, top_locations_df)
     print("Writing tickets in top locations to ./cache/tickets_in_top_locations.csv")
     tickets_in_top_locations_df.to_csv('./cache/tickets_in_top_locations.csv', index=False)
+
+
+    
